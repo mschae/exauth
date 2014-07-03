@@ -21,13 +21,13 @@ First, setup the application:
 ```
 
 Then, sign a request:
-```
+```elixir
   Exauth.sign(method, url) # or
   Exauth.sign(method, url, params)
 ```
 
 If you are looking to construct Auth headers, a method is already provided:
-```
+```elixir
   Exauth.sign_header(method, url) #or
   Exauth.sign_header(method, url, params)
 ```
