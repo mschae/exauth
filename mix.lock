@@ -1,0 +1,1 @@
+%{"oauth": {:git, "git://github.com/tim/erlang-oauth.git", "3ad509d487a72f9437fef31a379bf3cfeeb166a2", [tag: "v1.4.0"]}}
