@@ -1,9 +1,11 @@
 Exauth
 ======
 
-Elixir wrapper around the [Erlang OAuth](tim/erlang-oauth) library.
+Elixir wrapper around the [Erlang OAuth](https://github.com/tim/erlang-oauth) library.
 
 This gem is a duplicate of [Oauthex](https://github.com/marcelog/oauthex) with the difference that is adds a bit cleaner configuration possibility (using ETS) and it doesn't provide http endpoints. This project is only intended to sign requests to use with ones favorite HTTP library.
+
+A lot of this is also inspired (read copied) from [extwitter by @parroty](https://github.com/parroty/extwitter).
 
 ## Usage
 
