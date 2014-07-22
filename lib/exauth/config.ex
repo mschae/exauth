@@ -33,7 +33,7 @@ defmodule Exauth.Config do
 
   def get_consumer_tuple do
     get([:consumer_key, :consumer_secret])
-    |> Enum.map(fn(x) -> String.to_char_list(x) end)
+    |> Enum.map(&String.to_char_list/1)
     |> List.insert_at(-1, :hmac_sha1)
     |> List.to_tuple
   end
