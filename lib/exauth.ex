@@ -10,14 +10,14 @@ defmodule Exauth do
   def sign(method, url), do: sign(method, url, [])
 
   @spec sign(String.t, String.t, []) :: String.t
-  def sign(method, url, params) do
+  def sign(method, url, params \\ []) do
     :oauth.sign(
       normalize_method(method),
       String.to_char_list(url),
       normalize_params(params),
       Exauth.Config.get_consumer_tuple,
-      Exauth.Config.get(:token) |> String.to_char_list,
-      Exauth.Config.get(:token_secret) |> String.to_char_list
+      Exauth.Config.get(:token),
+      Exauth.Config.get(:token_secret)
     )
     |> :oauth.header_params_encode
     |> IO.chardata_to_string
@@ -26,10 +26,6 @@ defmodule Exauth do
   def sign_header(method, url), do: sign_header(method, url, [])
   def sign_header(method, url, params) do
     "OAuth " <> sign(method, url, params)
-  end
-
-  def configure(dict) do
-    Exauth.Config.set(dict)
   end
 
   def start(_type, _args) do
