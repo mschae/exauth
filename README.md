@@ -5,24 +5,11 @@ Elixir wrapper around the [Erlang OAuth](https://github.com/tim/erlang-oauth) li
 
 This gem is a duplicate of [Oauthex](https://github.com/marcelog/oauthex) with the difference that is adds a bit cleaner configuration possibility (using ETS) and it doesn't provide http endpoints. This project is only intended to sign requests to use with ones favorite HTTP library.
 
-A lot of this is also inspired (read copied) from [extwitter by @parroty](https://github.com/parroty/extwitter).
-
 ## Usage
 
 Currenlty this library only supports signing of request for which a consumer key, consumer secret, token and token secret is already known.
 
-First, setup the application:
-
-```elixir
-    Exauth.configure(
-      consumer_key: "consumer_key",
-      consumer_secret: "consumer_secret",
-      token: "token",
-      token_secret: "token_secret"
-    )
-```
-
-Then, sign a request:
+Sign a request:
 ```elixir
   Exauth.sign(method, url) # or
   Exauth.sign(method, url, params)
