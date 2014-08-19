@@ -5,29 +5,28 @@ defmodule Exauth.Mixfile do
     [app: :exauth,
      version: "0.0.1",
      elixir: "~> 0.15",
+     name: "Exauth",
+     description: "Wrapper for erlang-oauth",
+     package: package,
      deps: deps]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type `mix help compile.app` for more information
   def application do
     [ mod: { Exauth, [] },
             applications: []]
   end
 
-  # Dependencies can be hex.pm packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1"}
-  #
-  # Type `mix help deps` for more examples and options
   defp deps do
     [
       { :oauth, github: "tim/erlang-oauth", tag: "v1.4.0" }
+    ]
+  end
+
+  defp package do
+    [
+      contributors: ["Michael Schaefermeyer"],
+      licenses: ["MIT"],
+      links: %{ "Github" => "https://github.com/mschae/exauth" }
     ]
   end
 end
