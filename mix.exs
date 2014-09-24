@@ -4,7 +4,7 @@ defmodule Exauth.Mixfile do
   def project do
     [app: :exauth,
      version: "0.0.1",
-     elixir: "~> 0.15",
+     elixir: "~> 1.0.0",
      name: "Exauth",
      description: "Wrapper for erlang-oauth",
      package: package,
